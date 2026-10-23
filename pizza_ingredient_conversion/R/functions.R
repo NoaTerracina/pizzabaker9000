@@ -1,4 +1,41 @@
 
+
+pizzaplot <- function(df){
+  
+  labels <- c(flour = "Flour",
+              oil = "Oil",
+              water = "Water",
+              butter = "Butter",
+              dry_yeast = "Dry yeast",
+              sugar = "Sugar",
+              salt = "Salt",
+              pizza_sauce = "Pizza sauce",
+              shredded_cheese = "Shredded cheese",
+              mozzarella_solid = "Mozzarella blob")
+  
+  colors <- c(flour = "#E8D5A9",
+              oil = "#E8C547",
+              water = "#7FB8D6",
+              butter = "#F4D35E",
+              dry_yeast = "#B08850",
+              sugar = "#F5EBDD",
+              salt = "#C8C8C8",
+              pizza_sauce = "#C0392B",
+              shredded_cheese = "#F2A922",
+              mozzarella_solid = "#FFF1C9")
+  
+  ggplot(df, aes(x = reorder(ingredient, grams.per.dl), y = grams.per.dl)) +
+    geom_col(show.legend = FALSE) +
+    scale_x_discrete(labels = labels)
+    scale_fill_manual(values = colors) +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+    labs(x = NULL, y = "g/dL", title = "Ingredient density") +
+    theme_minimal()
+  
+}
+
+
+
 dl_to_grams <- function(df){
   
   repeat {
