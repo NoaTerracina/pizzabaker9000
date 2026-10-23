@@ -19,12 +19,12 @@ tar_source()
 # Replace the target list below with your own:
 list(
   tar_target(
-    name = data,
-    command = tibble(x = rnorm(100), y = rnorm(100))
-    # format = "qs" # Efficient storage for general data objects.
+    name = conv_rates_file,
+    command = here("data/ingredient_conversion_ratios.csv"),
+    format = "file"
   ),
   tar_target(
-    name = model,
-    command = coefficients(lm(y ~ x, data = data))
+    name = conv_rates,
+    command = read_delim(file = conv_rates_file)
   )
 )
