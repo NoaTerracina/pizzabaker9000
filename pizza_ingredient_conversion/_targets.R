@@ -1,4 +1,8 @@
 
+# Load targets
+library(targets)
+
+
 # Setup necessary packages
 tar_option_set(
   packages = c("here", "ggplot2") 
