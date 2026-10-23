@@ -1,0 +1,13 @@
+# Pizzabaker9000 README
+
+This package is made to convert volume (dL) to mass (g) of conventional pizza ingredients and to visualize their conversion ratios.
+
+The package has two main components:
+
+- /\_targets - R scripts to run an automated targets pipeline to read the conversion factor data and plot it
+
+- /converter_function - R script for an interactive volume to mass conversion of classic pizza ingredients
+
+- More info in WALKTHROUGH.qmd
+
+License: MIT (unless you put banana on that goddamn pizza, then you pay me 20 bucks)
