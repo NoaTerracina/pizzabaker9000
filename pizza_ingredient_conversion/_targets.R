@@ -42,3 +42,6 @@ list(
 #    command = dl_to_grams(conv_rates)    # Didn't work to do the conversion function in targets
 #  )
 )
+
+# Run the pipeline!
+tar_make()
