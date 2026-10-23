@@ -1,6 +1,17 @@
 
 
-dl_to_grams <- function(n_dl, df){
+dl_to_grams <- function(df){
+  
+  repeat {
+    
+    input <- readline("How many deciliters do you want to convert?")
+    
+    n_dl <- suppressWarnings(as.numeric(sub(",", ".", input)))  # accepts 2,5 and 2.5
+    
+    if (!is.na(n_dl) && n_dl > 0) break
+    cat("Please enter a positive number.\n")
+    
+  }
   
   choice <- menu(choices = c("Flour",
                              "Oil",
@@ -12,7 +23,7 @@ dl_to_grams <- function(n_dl, df){
                              "Pizza sauce",
                              "Shredded cheese",
                              "Mozzarella blob"),
-                 title = "Choose your ingredient to convert n_dl to grams of (press 0 to cancel):")
+                 title = "Choose your ingredient to convert dl to grams of (press 0 to cancel):")
   if (choice == 0) {
     return("Conversion was canceled")  # user cancelled
   }
