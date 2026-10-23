@@ -21,6 +21,7 @@ Let's start by loading the necessary packages:
 ```{r}
 #| message: false 
 #| echo: false
+#| label: functions-packages
  
 library(here) 
 library(ggplot2)
@@ -30,6 +31,7 @@ library(ggplot2)
 
 ```{r}
 #| message: false
+#| label: functions-load_data
 
 conv_rates <- read.csv(here("data/ingredient_conversion_ratios.csv"))
 ```
@@ -42,6 +44,7 @@ Full function with comments:
 
 ```{r}
 #| message: false
+#| label: pizzaplot-function
 
 pizzaplot <- function(df){
   
@@ -89,6 +92,7 @@ pizzaplot <- function(df){
 Try it out:
 
 ```{r}
+#| label: pizzaplot-run
 
 pizzaplot(conv_rates)
 ```
@@ -103,6 +107,7 @@ Full function with comments:
 
 ```{r}
 #| message: false
+#| label: dl_to_grams-function
 
 dl_to_grams <- function(df){
   
@@ -198,10 +203,12 @@ dl_to_grams <- function(df){
 
 ```
 
-Try it out! Can you figure out how to much a cubic-meter sized blob of mozzarella (1,000 dL) weighs?
+Uncheck and try it out! Can you figure out how to much a cubic-meter sized blob of mozzarella (1,000 dL) weighs?
 
 ```{r}
-dl_to_grams(conv_rates)
+#| label: dl_to_grams-run
+
+#dl_to_grams(conv_rates)
 ```
 
 # Targets
@@ -219,6 +226,8 @@ Let's walk through it (run separately in "/R/\_run.R") and see what we get! Star
 ```{r}
 #| message: false
 #| eval: false
+#| label: targets-load
+
 library(targets)
 ```
 
@@ -227,6 +236,8 @@ Then run targets.
 ```{r}
 #| message: false
 #| eval: false
+#| label: targets-run
+
 tar_make()
 ```
 
@@ -235,6 +246,7 @@ Now you can load whatever element you like! Here, the plot.
 ```{r}
 #| message: false
 #| eval: false
+#| label: targets-output
 
 tar_read(plot)
 ```
@@ -246,6 +258,7 @@ None of the code in this file needs to be run, targets runs this on its own late
 ```{r}
 #| message: false
 #| eval: false
+#| label: tar_walkthru-packages
 
 tar_option_set(
   packages = c("here", "ggplot2") 
@@ -257,6 +270,7 @@ This part just instructs targets on what is supposed to run, on what file, and w
 ```{r}
 #| message: false
 #| eval: false
+#| label: tar_walkthru-source
 
 tar_source()
 ```
@@ -268,6 +282,7 @@ This one sets the file path to the data
 ```{r}
 #| message: false
 #| eval: false
+#| label: tar_walkthru-filepath
 
 tar_target(
   name = conv_rates_file,
@@ -281,6 +296,7 @@ This one reads the data
 ```{r}
 #| message: false
 #| eval: false
+#| label: tar_walkthru-read_data
 
 tar_target(
   name = conv_rates,
@@ -293,6 +309,7 @@ This one runs the plotting function
 ```{r}
 #| message: false
 #| eval: false
+#| label: tar_walkthru-pizzaplot
 
 tar_target(
   name = plot,
@@ -305,6 +322,7 @@ This one would be how the conversion function would be run, but sadly targets is
 ```{r}
 #| message: false
 #| eval: false
+#| label: tar_walkthru-faulty_conversion_function
 
 tar_target(
   name = conversion,
