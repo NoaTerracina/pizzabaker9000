@@ -1,0 +1,4 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+dl_to_grams|function|be5e1762f2c97d6d
+conv_rates_file|stem|b002e11da7c5ee4c|429be58186766841|2c530c1562a7fbd1|-1779736639|C:/Users/chnil1140/OneDrive - University of Bergen/Desktop/PhD work/Courses/Open, Reproducible and Transparent Science in Ecology/D5_putItAllTogether/pizza_ingredient_conversion/data/ingredient_conversion_ratios.csv|t20749.4925378923s|s161b|161|file|local|vector|||0.5||
+conv_rates|stem||1a413a8bcfea6b96|371f72c08f848aab|778573573||t20749.5237647181s||0|rds|local|vector|||0||could not find function 'read_delim'

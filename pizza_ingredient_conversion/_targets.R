@@ -25,6 +25,10 @@ list(
   ),
   tar_target(
     name = conv_rates,
-    command = read_delim(file = conv_rates_file)
+    command = read.csv(file = conv_rates_file)
+  ),
+  tar_target(
+    name = conversion,
+    command = dl_to_grams(conv_rates)
   )
 )
