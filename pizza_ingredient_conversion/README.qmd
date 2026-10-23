@@ -16,4 +16,4 @@ The package has two main components:
 
 - More info in WALKTHROUGH.qmd
 
-License: MIT
+License: MIT (unless you put banana on that goddamn pizza, then you pay me 20 bucks)
