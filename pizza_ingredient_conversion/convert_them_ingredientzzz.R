@@ -34,7 +34,7 @@ dl_to_grams <- function(dl){
   }
   
   else if(choice==5){
-    return(paste0(dl," deciliters of dry yeast weighs ",dl*95,"g"))
+    return(paste0(dl," deciliters of dry yeast weighs ",dl*52,"g"))
   }
   
   else if(choice==6){
