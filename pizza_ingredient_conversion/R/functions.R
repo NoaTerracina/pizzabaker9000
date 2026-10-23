@@ -24,14 +24,16 @@ pizzaplot <- function(df){
               shredded_cheese = "#F2A922",
               mozzarella_solid = "#FFF1C9")
   
-  ggplot(df, aes(x = reorder(ingredient, grams.per.dl), y = grams.per.dl)) +
+  ggplot(df, aes(x = reorder(ingredient, grams.per.dl), 
+                 y = grams.per.dl, 
+                 fill = ingredient)) +
     geom_col(show.legend = FALSE) +
-    scale_x_discrete(labels = labels)
+    scale_x_discrete(labels = labels) +
     scale_fill_manual(values = colors) +
-    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+    theme_minimal() +
     labs(x = NULL, y = "g/dL", title = "Ingredient density") +
-    theme_minimal()
-  
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 }
 
 
