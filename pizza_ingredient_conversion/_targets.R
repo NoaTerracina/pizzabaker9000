@@ -1,9 +1,4 @@
 
-# Load targets
-
-library(targets)
-
-
 # Setup necessary packages
 tar_option_set(
   packages = c("here", "ggplot2") 
@@ -42,6 +37,3 @@ list(
 #    command = dl_to_grams(conv_rates)    # Didn't work to do the conversion function in targets
 #  )
 )
-
-# Run the pipeline!
-tar_make()
