@@ -1,10 +1,9 @@
 
-
 dl_to_grams <- function(df){
   
   repeat {
     
-    input <- readline("How many deciliters do you want to convert?")
+    input <- readline("How many deciliters do you want to convert? Enter here: ")
     
     n_dl <- suppressWarnings(as.numeric(sub(",", ".", input)))  # accepts 2,5 and 2.5
     
