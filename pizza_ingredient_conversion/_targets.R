@@ -28,7 +28,11 @@ list(
     command = read.csv(file = conv_rates_file)
   ),
   tar_target(
-    name = conversion,
-    command = dl_to_grams(conv_rates)
+    name = plot,
+    command = pizzaplot(conv_rates)
   )
+#  tar_target(
+#    name = conversion,
+#    command = dl_to_grams(conv_rates)    # Didn't work to do the conversion function in targets
+#  )
 )
